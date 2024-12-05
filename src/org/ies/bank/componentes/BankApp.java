@@ -39,11 +39,9 @@ public class BankApp {
                 double amount = scanner.nextDouble();
                 scanner.nextLine();
                 bank.showCustomerAccounts(iban);
-
             }
         }while(option!=6);
     }
-
     private int chooseOption(){
         int option;
         do{
@@ -56,7 +54,6 @@ public class BankApp {
             System.out.println("6. salir ");
             option = scanner.nextInt();
             scanner.nextLine();
-
         } while(option<1 || option>6);
         return option;
     }
