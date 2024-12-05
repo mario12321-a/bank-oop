@@ -12,10 +12,8 @@ public class BankApp {
         this.scanner = scanner;
         this.bankReader = bankReader;
     }
-
     public void run(){
         Bank bank = bankReader.read();
-
         int option;
         do{
             option = chooseOption();
@@ -42,6 +40,7 @@ public class BankApp {
             }
         }while(option!=6);
     }
+
     private int chooseOption(){
         int option;
         do{
