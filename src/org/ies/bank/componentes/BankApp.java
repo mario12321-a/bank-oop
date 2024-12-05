@@ -16,6 +16,7 @@ public class BankApp {
         Bank bank = bankReader.read();
         int option;
         do{
+
             option = chooseOption();
             if(option==1){
                 bank.showAccounts();
