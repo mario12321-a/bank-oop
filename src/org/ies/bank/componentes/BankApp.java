@@ -21,14 +21,17 @@ public class BankApp {
             option = chooseOption();
             if(option==1){
                 bank.showAccounts();
+
             }else if (option==2){
                 System.out.println("introduce el iban ");
                 String iban = scanner.nextLine();
                 bank.showAccount(iban);
+
             }else if(option==3){
                 System.out.println("introduce NIF");
                 String nif = scanner.nextLine();
                 bank.showCustomerAccounts(nif);
+
             }else if(option==4){
                 System.out.println("introduce el IBAN ");
                 String iban = scanner.nextLine();
@@ -36,6 +39,7 @@ public class BankApp {
                 double amount = scanner.nextDouble();
                 scanner.nextLine();
                 bank.showCustomerAccounts(iban);
+
             }
         }while(option!=6);
     }
@@ -52,6 +56,7 @@ public class BankApp {
             System.out.println("6. salir ");
             option = scanner.nextInt();
             scanner.nextLine();
+
         } while(option<1 || option>6);
         return option;
     }
