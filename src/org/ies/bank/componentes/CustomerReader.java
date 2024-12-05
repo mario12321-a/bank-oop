@@ -1,11 +1,12 @@
-package componentes;
+package org.ies.bank.componentes;
 
-import model.Customer;
+import org.ies.bank.model.Customer;
 
 import java.util.Scanner;
 
 public class CustomerReader {
     private final Scanner scanner;
+
     public CustomerReader (Scanner scanner){
         this.scanner=scanner;
     }
