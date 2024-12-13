@@ -12,45 +12,71 @@ public class Bank {
         this.accounts = accounts;
     }
 
-    public void showAccounts() {
-        for (var account : accounts) {
+    public void showAcoountCustomer(String iban){
+        var account = findAccount(iban);
+        if (account== null){
+            System.out.println("cuenta no encontrada ");
+        } else{
+            account.getCustomer().showInfo();
+        }
+    }
+
+    public int countCustomerAccounts(String nif){
+        int count =0;
+        for(var account:accounts){
+            if(account.getCustomer().getNif().equals(nif)){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public void showAccounts(){
+        for(var account:accounts){
             account.showInfo();
         }
     }
 
-    public void showAccount(String iban) {
-        for (var account : accounts) {
-            if (account.getIban().equals(iban)) {
+    public void showCustomerAccounts(String nif){
+        for(var account:accounts){
+            if(account.getCustomer().getNif().equals(nif)){
                 account.showInfo();
             }
         }
     }
 
-    public void showCustomerAccounts(String nif) {
-        for (var account : accounts) {
-            if (account.getCustomer().getNif().equals(nif)) {
-                account.showInfo();
-            }
-        }
-    }
-
-    public void deposit(String iban, double amount) {
+    public void withdraw(String iban , double amount){
         var account = findAccount(iban);
-        if (account != null) {
-            account.desposit(amount);
+        if(account !=null){
+            if(account.getSaldo()>=amount){
+                account.desposit(-amount);
+            }else{
+                System.out.println("no hay suficiente saldo ");
+            }
         } else {
-            System.out.println("cuenta no encontrada");
+            System.out.println("cuenta no encontrada ");
         }
     }
 
-    public Account findAccount(String iban) {
-        for (var account : accounts) {
-            if (account.getIban().equals(iban)) {
+    public void deposit(String iban, double amount ){
+        var account= findAccount(iban);
+        if(account!=null){
+            account.desposit(amount);
+        }else{
+            System.out.println("cuenta no encontrada ");
+        }
+    }
+
+    public Account findAccount(String iban ){
+        for(var account:accounts){
+            if(account.getIban().equals(iban)){
                 return account;
             }
         }
         return null;
     }
+
+
 
     public String getName() {
         return name;

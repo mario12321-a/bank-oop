@@ -13,6 +13,10 @@ public class Customer {
         this.surName = surName;
     }
 
+    public void showInfo(){
+        System.out.println("NIF: " + nif + " , " + surName + " , " + name );
+    }
+
     public String getNif() {
         return nif;
     }
