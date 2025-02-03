@@ -23,7 +23,7 @@ public class BankApp {
             }else if (option==2){
                 System.out.println("introduce el iban ");
                 String iban = scanner.nextLine();
-                bank.showAccounts(iban);
+                //bank.showAccounts(iban);
 
             }else if(option==3){
                 System.out.println("introduce NIF");
