@@ -1,7 +1,7 @@
 package org.ies.bank;
 
 import org.ies.bank.componentes.AccountReader;
-import org.ies.bank.componentes.BankApp;
+import org.ies.bank.componentes.BankApp1;
 import org.ies.bank.componentes.BankReader;
 import org.ies.bank.componentes.CustomerReader;
 import org.ies.bank.model.Bank;
@@ -17,8 +17,8 @@ public class Main {
         Bank bank = bankReader.read();
 
         System.out.println(bank);
-        //BankApp bankApp = new BankApp(scanner, bankReader);
+        var bankApp1 = new BankApp1(scanner, bankReader);
 
-        //bankApp.run();
+        bankApp1.run();
     }
 }
